@@ -9,7 +9,7 @@
 </head>
 <body>
     <form method ="get" action = "getTwoWheelerForUpdate">
-     Enter vehicle Code: <input type ="text" name = "code" >
+    <input type ="text" name = "code" placeholder = "Enter vehicle code">
     <input type="submit" value="submit">
     </form>
     <% TwoWheeler twoWheeler = (TwoWheeler) session.getAttribute("twoWheeler"); %>
@@ -25,14 +25,18 @@
                 <td>BrandName</td>
                 <% String option = twoWheeler.getBrandName().toString(); %>                
                 <td> 
-                    <input type ="radio" name ="brandName" value = "HONDA"
-                    <% if(option.equals("HONDA")) {%> <%= "checked" %> <% }%> >Honda
-                    <input type ="radio" name ="brandName" value = "DUCATI"
-                    <% if(option.equals("DUCATI")) {%> <%= "checked" %> <% }%> >Ducati
-                    <input type ="radio" name ="brandName" value = "KAWASAKI"
-                    <% if(option.equals("KAWASAKI")) {%> <%= "checked" %> <% }%> >kawasaki
-                    <input type ="radio" name ="brandName" value = "PULSER"
-                    <% if(option.equals("PULSER")) {%> <%= "checked" %> <% }%> >pulser
+                    <input type ="radio" name ="brandName" id = "honda" value = "HONDA"
+                    <% if(option.equals("HONDA")) {%> <%= "checked" %> <% }%> >
+                    <label for="honda">Honda</label>
+                    <input type ="radio" name ="brandName" id = "ducati" value = "DUCATI"
+                    <% if(option.equals("DUCATI")) {%> <%= "checked" %> <% }%> >
+                    <label for="ducati">Ducati</label>
+                    <input type ="radio" name ="brandName" id = "kawasaki" value = "KAWASAKI"
+                    <% if(option.equals("KAWASAKI")) {%> <%= "checked" %> <% }%> >
+                    <label for="kawasaki">Kawasaki</label>
+                    <input type ="radio" name ="brandName" id = "pulser" value = "PULSER"
+                    <% if(option.equals("PULSER")) {%> <%= "checked" %> <% }%> >
+                    <label for="pulser">Pulser</label> 
                 </td>
             </tr>
             
@@ -40,12 +44,15 @@
                 <td>FuelType</td>
                 <% option = twoWheeler.getFuelType().toString(); %>
                 <td> 
-                    <input type ="radio" name ="fuelType" value = "PETROL" 
-                    <% if(option.equals("PETROL")) {%> <%= "checked" %> <% }%> >Petrol
-                    <input type ="radio" name ="fuelType" value = "DIESEL"
-                    <% if(option.equals("DIESEL")) {%> <%= "checked" %> <% }%> >diesel
-                    <input type ="radio" name ="fuelType" value = "BATTERY" 
-                    <% if(option.equals("BATTERY")) {%> <%= "checked" %> <% }%> >battery
+                    <input type ="radio" name ="fuelType" id = "petrol" value = "PETROL" 
+                    <% if(option.equals("PETROL")) {%> <%= "checked" %> <% }%> >
+                    <label for="petrol">Petrol</label>
+                    <input type ="radio" name ="fuelType" id = "diesel" value = "DIESEL"
+                    <% if(option.equals("DIESEL")) {%> <%= "checked" %> <% }%> >
+                    <label for="diesel">Diesel</label> 
+                    <input type ="radio" name ="fuelType" id = "battery" value = "BATTERY" 
+                    <% if(option.equals("BATTERY")) {%> <%= "checked" %> <% }%> >
+                    <label for="battery">Battery</label>
                 </td>
             </tr>
             
@@ -61,16 +68,21 @@
                 <td>colour</td>
                 <% option = twoWheeler.getColour().toString(); %>
                 <td> 
-                    <input type ="radio" name ="colour" value = "BLACK"
+                    <input type ="radio" name ="colour"id = "black" value = "BLACK"
                     <% if(option.equals("BLACK")) {%> <%= "checked" %> <% }%> >Black
-                    <input type ="radio" name ="colour" value = "BLUE"
+                    <label for="black">Black</label> 
+                    <input type ="radio" name ="colour" id = "blue" value = "BLUE"
                     <% if(option.equals("BLUE")) {%> <%= "checked" %> <% }%> >Blue
-                    <input type ="radio" name ="colour" value = "WHITE"
+                    <label for="blue">Blue</label>
+                    <input type ="radio" name ="colour" id = "white" value = "WHITE"
                     <% if(option.equals("WHITE")) {%> <%= "checked" %> <% }%> >White
-                    <input type ="radio" name ="colour" value = "RED"
+                    <label for="white">White</label>
+                    <input type ="radio" name ="colour" id = "red" value = "RED"
                     <% if(option.equals("RED")) {%> <%= "checked" %> <% }%> >Red
-                    <input type ="radio" name ="colour" value = "YELLOW"
+                    <label for="red">Red</label>
+                    <input type ="radio" name ="colour" id = "yellow" value = "YELLOW"
                     <% if(option.equals("YELLOW")) {%> <%= "checked" %> <% }%> >Yellow
+                    <label for="yellow">Yellow</label>
                 </td>
             </tr>  
             
@@ -93,12 +105,15 @@
                 <td>Type</td>
                 <% option = twoWheeler.getType().toString(); %>
                 <td> 
-                    <input type ="radio" name ="type" value = "GEAR"
+                    <input type ="radio" name ="type" id = "gear" value = "GEAR"
                     <% if(option.equals("GEAR")) {%> <%= "checked" %> <% }%> >Gear
-                    <input type ="radio" name ="type" value = "NONGEAR"
+                    <label for="gear">Gear</label>
+                    <input type ="radio" name ="type" id = "non-Gear" value = "NONGEAR"
                     <% if(option.equals("NONGEAR")) {%> <%= "checked" %> <% }%> >Non-Gear
-                    <input type ="radio" name ="type" value = "SCOTTER"
+                    <label for="non-Gear">Non-Gear</label>
+                    <input type ="radio" name ="type" id = "scotter" value = "SCOTTER"
                     <% if(option.equals("SCOTTER")) {%> <%= "checked" %> <% }%> >Scotter
+                    <label for="scotter">Scotter</label>
                 </td>
             </tr> 
             

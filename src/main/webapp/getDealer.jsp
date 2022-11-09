@@ -9,7 +9,7 @@
 </head>
 <body>
     <form method = "post" action = "getDealerById">
-    Enter Dealer Id: <input type ="number" name = "id" >
+    <input type ="number" name = "id" placeholder = "Enter dealer id">
     <input type="submit" value="submit">
     </form>
     <% Dealer dealer = (Dealer) session.getAttribute("dealer"); %>

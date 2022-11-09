@@ -8,7 +8,7 @@
 </head>
 <body>
     <form action = "retriveTwoWheelerInCodes.jsp" method ="post">
-        Choice: <input type ="number" name = "choice"></br>
+        <input type ="number" name = "choice" placeholder = "Enter your choice"></br>
          <input type ="submit" value ="submit">
     </form>
 </body>

@@ -10,7 +10,7 @@
 </head>
 <body>
     <form method = "post" action = "getTwoWheelerById">
-    Enter vehicle code: <input type ="text" name = "code" >
+    <input type ="text" name = "code" placeholder = "Enter vehicle code">
     <input type="submit" value="submit">
     </form>
     <% TwoWheeler twoWheeler = (TwoWheeler) session.getAttribute("twoWheeler"); %>

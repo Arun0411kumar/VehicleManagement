@@ -8,7 +8,7 @@
 </head>
 <body>
     <form method = "post" action = "deleteTwoWheelerById">
-    Enter Vehicle Code: <input type ="text" name = "code" >
+    <input type ="text" name = "code" placeholder = "Enter vehicle code">
     <input type="submit" value="submit">
     </form>
     <% if (null != session.getAttribute("found")) { %>

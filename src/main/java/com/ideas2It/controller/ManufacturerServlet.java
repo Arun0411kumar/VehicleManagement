@@ -108,7 +108,7 @@ public class ManufacturerServlet extends HttpServlet {
 			if (action.equals("/assignManufacturer")) {
 			    response.sendRedirect("insertTwoWheeler.jsp");	
 			} else
-			    response.sendRedirect("getManufacturers.jsp");
+			    response.sendRedirect("manufacturers.jsp");
 		} catch (VehicleManagementException | IOException e) {
 			VehicleManagementLogger.displayVehicleError(e);
 		}
@@ -129,9 +129,9 @@ public class ManufacturerServlet extends HttpServlet {
 			if (action.equals("/assignManufacturerId")) {
 			    response.sendRedirect("assignManufacturer.jsp");
 			} else if (action.equals("/getManufacturerforUpdate")) {
-			    response.sendRedirect("updateManufacturerById.jsp");
+			    response.sendRedirect("updateManufacturer.jsp");
 			} else {
-				response.sendRedirect("getManufacturerById.jsp");
+				response.sendRedirect("getManufacturer.jsp");
 			}    
 		} catch (VehicleManagementException | IOException e) {
 			VehicleManagementLogger.displayVehicleError(e);
@@ -150,7 +150,7 @@ public class ManufacturerServlet extends HttpServlet {
 					Integer.parseInt(request.getParameter("id")));
 			HttpSession session = request.getSession();
 			session.setAttribute("found", found);
-			response.sendRedirect("deleteManufacturerById.jsp");
+			response.sendRedirect("deleteManufacturer.jsp");
 		} catch (VehicleManagementException | IOException e) {
 			VehicleManagementLogger.displayVehicleError(e);
 		}
@@ -173,7 +173,7 @@ public class ManufacturerServlet extends HttpServlet {
 			boolean found = manufacturerService.updateManufacturer(manufacturer);
 			HttpSession session = request.getSession();
 			session.setAttribute("found", found);
-			response.sendRedirect("updateManufacturerById.jsp");
+			response.sendRedirect("updateManufacturer.jsp");
 		} catch (VehicleManagementException | IOException e) {
 			VehicleManagementLogger.displayVehicleError(e);
 		}

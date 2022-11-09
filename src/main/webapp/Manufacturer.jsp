@@ -16,7 +16,7 @@
          <tr>
              <td>
              	<a href="insertManufacturer.jsp"> <input type="button"
-		        value="insertManufacturer">
+		        value="insert">
 	            </a>
              </td>
          </tr>
@@ -40,7 +40,7 @@
          <tr>
              <td>
              	<a href="deleteManufacturerById.jsp"> <input type="button"
-		        value="deleteManufacturerById">
+		        value="delete">
 	            </a>
              </td>
          </tr>
@@ -48,7 +48,7 @@
          <tr>
              <td>
              	<a href="updateManufacturerById.jsp"> <input type="button"
-		        value="updateManufacturerById">
+		        value="update">
 	            </a>
              </td>
          </tr>

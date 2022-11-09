@@ -16,7 +16,7 @@
          <tr>
              <td>
                  <a href="insertDealer.jsp"> <input type="button"
-		         value="insertDealer">
+		         value="insert">
 	             </a>
              </td>
          </tr>
@@ -40,7 +40,7 @@
          <tr>
              <td>
                  <a href="deleteDealerById.jsp"> <input type="button"
-		         value="deleteDealerById">
+		         value="delete">
 	             </a>
              </td>
          </tr>
@@ -48,7 +48,7 @@
          <tr>
              <td>
              	<a href="updateDealerById.jsp"> <input type="button"
-		         value="updateDealerById">
+		         value="update">
 	            </a>
              </td>
          </tr>

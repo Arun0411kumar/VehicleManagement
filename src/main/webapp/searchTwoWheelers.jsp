@@ -11,7 +11,7 @@
 </head>
 <body>
     <form method = "post" action = "searchTwoWheelers">
-    Search: <input type ="text" name = "letter" >
+    <input type ="text" name = "letter" placeholder = "Enter search value">
     <input type="submit" value="submit">
     </form>
     <% List<TwoWheeler> twoWheelers = (List<TwoWheeler>) session.getAttribute("twoWheelers"); %>

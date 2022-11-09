@@ -15,7 +15,7 @@
 </head>
 <body>   
      <form action ="In" >
-      <input name = "choice" value = "<%= choice %>" readonly>
+      <input name = "choice" value = "<%= choice %>" placeholder = "Your choices" readonly>
       <% for (int index = 0; index < choice; index++) { %>
       <table>
       <tr>

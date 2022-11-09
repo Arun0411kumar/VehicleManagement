@@ -7,9 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-    <form method = "post" action = "deleteDealerById">
-    Enter Dealer Id: <input type ="number" name = "id" >
-    <input type="submit" value ="submit">
+    <form method = "post" action = "deleteManufacturerById">
+    <input type ="number" name = "id" placeholder = "Enter manufacturer id">
+    <input type="submit" value="submit">
     </form>
     <% if (null != session.getAttribute("found")) { %>
         <% boolean found = (boolean) session.getAttribute("found"); %>

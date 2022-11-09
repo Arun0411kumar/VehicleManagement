@@ -23,7 +23,7 @@ Dealer dealer = null;
 	<form method = "post" action = "insertTwoWheeler">
         <table>
             <tr>
-                <td>BrandName</td>
+                <td>Brand Name</td>
                 <td> 
                     <input type ="radio" name ="brandName" id = "honda" value = "HONDA">
                     <label for="honda">Honda</label>
@@ -31,18 +31,20 @@ Dealer dealer = null;
                     <label for="ducati">Ducati</label>
                     <input type ="radio" name ="brandName" id = "kawasaki" value = "KAWASAKI">
                     <label for="kawasaki">Kawasaki</label>
-                    <input type ="radio" name ="brandName" id = "pulser" value = "PULSER">pulser
+                    <input type ="radio" name ="brandName" id = "pulser" value = "PULSER">
                     <label for="pulser">Pulser</label>                  
                 </td>
             </tr>
             
             <tr>
-                <td>FuelType</td>
+                <td>Fuel Type</td>
                 <td> 
                     <input type ="radio" name ="fuelType" id = "petrol" value = "PETROL">
                     <label for="petrol">Petrol</label>                    
-                    <input type ="radio" name ="fuelType" value = "DIESEL">diesel
-                    <input type ="radio" name ="fuelType" value = "BATTERY">battery
+                    <input type ="radio" name ="fuelType" id = "diesel" value = "DIESEL">
+                    <label for="diesel">Diesel</label>                     
+                    <input type ="radio" name ="fuelType" id = "battery" value = "BATTERY">
+                    <label for="battery">Battery</label> 
                 </td>
             </tr>
             
@@ -57,23 +59,28 @@ Dealer dealer = null;
             <tr>
                 <td>colour</td>
                 <td> 
-                    <input type ="radio" name ="colour" value = "BLACK">Black
-                    <input type ="radio" name ="colour" value = "BLUE">Blue
-                    <input type ="radio" name ="colour" value = "WHITE">White
-                    <input type ="radio" name ="colour" value = "RED">Red
-                    <input type ="radio" name ="colour" value = "YELLOW">Yellow
+                    <input type ="radio" name ="colour" id = "black" value = "BLACK">Black
+                    <label for="black">Black</label>                     
+                    <input type ="radio" name ="colour" id = "blue" value = "BLUE">Blue
+                    <label for="blue">Blue</label>
+                    <input type ="radio" name ="colour" id = "white" value = "WHITE">White
+                    <label for="white">White</label>
+                    <input type ="radio" name ="colour" id = "red" value = "RED">Red
+                    <label for="red">Red</label>
+                    <input type ="radio" name ="colour" id = "yellow" value = "YELLOW">Yellow
+                    <label for="yellow">Yellow</label>
                 </td>
             </tr>  
             
             <tr>
-                <td>DateOfManufacture</td>
+                <td>Date Of Manufacture</td>
                 <td> 
                     <input type ="date" name ="dateOfManufacture">
                 </td>
             </tr> 
             
             <tr>
-                <td>NoOfStroke</td>
+                <td>No Of Stroke</td>
                 <td> 
                     <input type ="tel" name ="noOfStroke" pattern ="[2]|[4]" 
                      title = "Enter number 2 or 4">
@@ -83,9 +90,12 @@ Dealer dealer = null;
             <tr>
                 <td>Type</td>
                 <td> 
-                    <input type ="radio" name ="type" value = "GEAR">Gear
-                    <input type ="radio" name ="type" value = "NONGEAR">Non-Gear
-                    <input type ="radio" name ="type" value = "SCOTTER">Scotter
+                    <input type ="radio" name ="type" id = "gear" value = "GEAR">Gear
+                    <label for="gear">Gear</label> 
+                    <input type ="radio" name ="type" id = "non-Gear" value = "NONGEAR">Non-Gear
+                    <label for="non-Gear">Non-Gear</label> 
+                    <input type ="radio" name ="type" id = "scotter" value = "SCOTTER">Scotter
+                    <label for="scotter">Scotter</label> 
                 </td>
             </tr>  
             
@@ -122,13 +132,6 @@ Dealer dealer = null;
                       	   <% } %>
 	                 </select>
 	                 <% } %>
-                 </td>         
-            </tr>
-            
-            <tr>  
-                 <td> 
-                   <form method = "get" action = "fgdfgdf"> 
-	               </form>
                  </td>         
             </tr>
             

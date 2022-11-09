@@ -1,4 +1,4 @@
-<%@page import="com.ideas2It.model.Manufacturer"%>
+<%@page import="com.ideas2It.model.Dealer"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -8,44 +8,45 @@
 <title>Insert title here</title>
 </head>
 <body>
-    <form method ="get" action = "getManufacturerForUpdate">
-     Enter Manufacturer Id: <input type ="number" name = "id" >
+    <form method ="get" action = "getDealerForUpdate">
+    <input type ="number" name = "id" placeholder = "Enter dealer id">
     <input type="submit" value="submit">
     </form>
-    <% Manufacturer manufacturer = (Manufacturer) session.getAttribute("manufacturer"); %>
-    <% if (null != manufacturer) { %>
+    <% Dealer dealer = (Dealer) session.getAttribute("dealer"); %>
+    <% if (null != dealer) { %>
         <h1>Replace some value If you want</h1>
-        <form method = "get" action = "updateManufacturerById">
+        <form method = "get" action = "updateDealerById">
         <table>
             <tr>
                  <td>Id</td>
-                 <td><input name = "id" value = "<%= manufacturer.getId() %>" readonly>
-            </tr>
+                 <td><input name = "id" value = "<%= dealer.getId() %>" readonly>
+            </tr>        
             <tr>
-                <td>Name</td>
+                <td>City</td>
                 <td> 
-                    <input type ="text" name ="name" value = "<%= manufacturer.getName() %>">
+                    <input type ="text" name ="city" value = "<%= dealer.getCity() %>">
                 </td>
             </tr>
             
             <tr>
                 <td>Company</td>
                 <td> 
-                    <input type ="text" name ="company" value = "<%= manufacturer.getCompany() %>">
+                    <input type ="text" name ="company" value = "<%= dealer.getCompany() %>">
                 </td>
             </tr>
             
             <tr>
-                <td>Investment</td>
+                <td>StockAvailable</td>
                 <td> 
-                    <input type ="number" name ="investment" value = "<%= manufacturer.getInvestment() %>">
+                    <input type ="number" name ="stockAvailable" value = "<%= dealer.getStockAvailable() %>">
                 </td>
             </tr>  
+            
             <tr>
                 <td> 
                     <input type ="submit" value = "save">
                 </td>
-            </tr>           
+            </tr>          
         </table>
     </form>
     <% } %>

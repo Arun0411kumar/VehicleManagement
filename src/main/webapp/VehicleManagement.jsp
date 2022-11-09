@@ -11,7 +11,7 @@
     <table>
         <tr>
             <td>
-            <a href = "Vehicle.jsp">
+            <a href = "vehicle.jsp">
             <input type = "button" value = "vehicle">
             </a>
             </td>
@@ -19,7 +19,7 @@
         
         <tr>
             <td>
-            <a href = "Manufacturer.jsp">
+            <a href = "manufacturer.jsp">
              <input type = "button" value = "manufacturer">
             </a>
             </td>
@@ -27,7 +27,7 @@
         
         <tr>
             <td>
-            <a href = "Dealer.jsp">
+            <a href = "dealer.jsp">
             <input type = "button" value = "dealer">
             </a>
             </td>

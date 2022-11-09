@@ -17,7 +17,7 @@
     <tr>
         <td>
         	<a href="insertTwoWheeler.jsp"> <input type="button"
-		    value="insertTwoWheeler">
+		    value="insert">
 	        </a>
         </td>
     </tr>
@@ -32,24 +32,24 @@
     
     <tr>
         <td>
-        	<a href="getTwoWheelerById.jsp"> <input type="button"
-		    value="getTwoWheelerById">
+        	<a href="getTwoWheeler.jsp"> <input type="button"
+		    value="getTwoWheeler">
 	        </a></br>
         </td>
     </tr>
     
     <tr>
         <td>
-        	<a href="deleteTwoWheelerById.jsp"> <input type="button"
-		     value="deleteTwoWheelerById">
+        	<a href="deleteTwoWheeler.jsp"> <input type="button"
+		     value="delete">
 	        </a></br>
         </td>
     </tr>
     
     <tr>
         <td>
-        	<a href="updateTwoWheelerById.jsp"> <input type="button"
-		     value="updateTwoWheelerById">
+        	<a href="updateTwoWheeler.jsp"> <input type="button"
+		     value="update">
 	        </a></br>
         </td>
     </tr>
@@ -57,7 +57,7 @@
     <tr>
         <td>
             <a href="searchTwoWheelers.jsp"> <input type="button"
-		    value="searchTwoWheelers">
+		    value="search">
 	        </a></br>
         </td>
     </tr>
@@ -65,7 +65,7 @@
     <tr>
         <td>
             <a href="retriveVehiclesInRange.jsp"> <input type="button"
-		    value="retriveVehiclesInRange">
+		    value="Range">
 	        </a></br>
         </td>
     </tr>
@@ -73,7 +73,7 @@
     <tr>
         <td>
         	<a href="getChoice.jsp"> <input type="button"
-		    value="retriveTwoWheelerInCodes">
+		    value="InCodes">
 	        </a>
         </td>
     </tr>                        

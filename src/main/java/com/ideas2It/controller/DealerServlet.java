@@ -101,7 +101,7 @@ public class DealerServlet extends HttpServlet {
 			if (action.equals("/assignDealer")) {
 				response.sendRedirect("insertTwoWheeler.jsp");		
 			} else {
-			    response.sendRedirect("getDealers.jsp");
+			    response.sendRedirect("dealers.jsp");
 			}    
 		} catch (VehicleManagementException | IOException e) {
 			VehicleManagementLogger.displayVehicleError(e);
@@ -125,7 +125,7 @@ public class DealerServlet extends HttpServlet {
 			} else if (action.equals("/assignDealerId")) {
 				response.sendRedirect("assignDealer.jsp");				
 			} else {
-				response.sendRedirect("getDealerById.jsp");		
+				response.sendRedirect("getDealer.jsp");		
 			}
 		} catch (VehicleManagementException | IOException e) {
 			VehicleManagementLogger.displayVehicleError(e);
@@ -144,7 +144,7 @@ public class DealerServlet extends HttpServlet {
 					Integer.parseInt(request.getParameter("id")));
 			HttpSession session = request.getSession();
 			session.setAttribute("found", found);
-			response.sendRedirect("deleteDealerById.jsp");
+			response.sendRedirect("deleteDealer.jsp");
 		} catch (VehicleManagementException | IOException e) {
 			VehicleManagementLogger.displayVehicleError(e);
 		}
@@ -167,7 +167,7 @@ public class DealerServlet extends HttpServlet {
 			boolean found = dealerService.updateDealer(dealer);
 			HttpSession session = request.getSession();
 			session.setAttribute("found", found);
-			response.sendRedirect("updateDealerById.jsp");
+			response.sendRedirect("updateDealer.jsp");
 		} catch (VehicleManagementException | IOException e) {
 			VehicleManagementLogger.displayVehicleError(e);
 		}

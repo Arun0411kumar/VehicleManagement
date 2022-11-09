@@ -9,7 +9,7 @@
 </head>
 <body>
     <form method = "post" action = "getManufacturerById">
-    Enter Manufacturer Id: <input type ="number" name = "id" >
+    <input type ="number" name = "id" placeholder = "Enter manufacturer id">
     <input type="submit" value="submit">
     </form>
     <% Manufacturer manufacturer = (Manufacturer) session.getAttribute("manufacturer"); %>

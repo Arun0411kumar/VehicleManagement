@@ -120,8 +120,7 @@ public class VehicleServlet extends HttpServlet {
 			session.setAttribute("twoWheeler", twoWheeler);
 			response.sendRedirect("insertTwoWheeler.jsp");
 		} catch (NumberFormatException | VehicleManagementException | ParseException e) {
-			//VehicleManagementLogger.displayVehicleError(e);
-			e.printStackTrace();
+			VehicleManagementLogger.displayVehicleError(e);
 		}
 	}
 	
@@ -136,7 +135,7 @@ public class VehicleServlet extends HttpServlet {
 			List<TwoWheeler> twoWheelers = vehicleService.getTwoWheelers();
 			HttpSession session = request.getSession();
 			session.setAttribute("twoWheelers", twoWheelers);
-			response.sendRedirect("getTwoWheelers.jsp");
+			response.sendRedirect("twoWheelers.jsp");
 		} catch (VehicleManagementException | IOException e) {
 			VehicleManagementLogger.displayVehicleError(e);
 		}
@@ -154,9 +153,9 @@ public class VehicleServlet extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("twoWheeler", twoWheeler);
 			if (action.equals("/getTwoWheelerForUpdate")) {
-				response.sendRedirect("updateTwoWheelerById.jsp");
+				response.sendRedirect("updateTwoWheeler.jsp");
 			} else {		
-			    response.sendRedirect("getTwoWheelerById.jsp");
+			    response.sendRedirect("getTwoWheeler.jsp");
 			}    
 		} catch (VehicleManagementException | IOException e) {
 			VehicleManagementLogger.displayVehicleError(e);
@@ -174,7 +173,7 @@ public class VehicleServlet extends HttpServlet {
 			boolean found = vehicleService.deleteTwoWheelerByCode(request.getParameter("code"));
 			HttpSession session = request.getSession();
 			session.setAttribute("found", found);
-			response.sendRedirect("deleteTwoWheelerById.jsp");
+			response.sendRedirect("deleteTwoWheeler.jsp");
 		} catch (VehicleManagementException | IOException e) {
 			VehicleManagementLogger.displayVehicleError(e);
 		}
@@ -201,7 +200,7 @@ public class VehicleServlet extends HttpServlet {
 			boolean found = vehicleService.updateVehicle(twoWheeler);
 			HttpSession session = request.getSession();
 			session.setAttribute("found", found);
-			response.sendRedirect("updateTwoWheelerById.jsp");
+			response.sendRedirect("updateTwoWheeler.jsp");
 		} catch ( IOException | ParseException | VehicleManagementException e) {
 			VehicleManagementLogger.displayVehicleError(e);
 		}
