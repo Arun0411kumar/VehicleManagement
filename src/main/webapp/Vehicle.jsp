@@ -11,9 +11,17 @@
     <table>
         <tr>
             <td>
-                <a href = "TwoWheeler.jsp">
+                <a href = "twoWheeler.jsp">
                  <input type = "button" value = "TwoWheeler">
                  </a>
+            </td> 
+        </tr>
+        
+        <tr>
+            <td>
+                <a href = "vehicleManagement.jsp">
+                 <input type = "button" value = "back">
+                </a>
             </td> 
         </tr>
     </table>    

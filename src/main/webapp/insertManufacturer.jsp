@@ -62,5 +62,20 @@
         </tr> 
     </table>    
     <% } %>
+       <table>
+         <tr>
+          <td>
+                <a href = "manufacturer.jsp">
+                 <input type = "button" value = "back">
+                </a>
+          </td> 
+          
+          <td>
+                <a href = "vehicleManagement.jsp">
+                 <input type = "button" value = "home">
+                 </a>
+          </td> 
+        </tr>     
+      </table> 
 </body>
 </html>

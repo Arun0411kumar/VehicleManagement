@@ -139,8 +139,7 @@ Dealer dealer = null;
                 <td> 
                     <input type ="submit" value = "submit">
                 </td>
-            </tr>                     
-        </table>
+            </tr> 
      </form>
 </body>
     <% TwoWheeler twoWheeler = (TwoWheeler) session.getAttribute("twoWheeler"); %>
@@ -211,4 +210,19 @@ Dealer dealer = null;
            <% } %>    
         </tr> 
     <% } %>
+      <table>
+        <tr>
+          <td>
+                <a href = "twoWheeler.jsp">
+                 <input type = "button" value = "back">
+                </a>
+          </td> 
+          
+          <td>
+                <a href = "vehicleManagement.jsp">
+                 <input type = "button" value = "home">
+                 </a>
+          </td> 
+        </tr>                     
+      </table>
 </html>

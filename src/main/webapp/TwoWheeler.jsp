@@ -76,7 +76,21 @@
 		    value="InCodes">
 	        </a>
         </td>
-    </tr>                        
+    </tr> 
+    
+    <tr>
+          <td>
+                <a href = "vehicle.jsp">
+                 <input type = "button" value = "back">
+                </a>
+          </td> 
+          
+          <td>
+                <a href = "vehicleManagement.jsp">
+                 <input type = "button" value = "home">
+                 </a>
+          </td> 
+     </tr>                       
     </table>			
 	</form>
 </body>

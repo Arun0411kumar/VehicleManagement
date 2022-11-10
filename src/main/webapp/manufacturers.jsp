@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body> 
      <h1>YOUR MANUFACTURER LIST</h1></br>
     <% List<Manufacturer> manufacturers = (List<Manufacturer>) session.getAttribute("manufacturers"); %>
     <% if (null != manufacturers) { %>
@@ -36,5 +36,20 @@
     </table>    
     <% }  }%>
          <% session.setAttribute("manufacturers", manufacturers); %>  
+    <table>
+         <tr>
+          <td>
+                <a href = "manufacturer.jsp">
+                 <input type = "button" value = "back">
+                </a>
+          </td> 
+          
+          <td>
+                <a href = "vehicleManagement.jsp">
+                 <input type = "button" value = "home">
+                 </a>
+          </td> 
+        </tr>     
+      </table> 
 </body>
 </html>

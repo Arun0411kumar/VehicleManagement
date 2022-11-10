@@ -54,6 +54,21 @@
         <% boolean found = (boolean) session.getAttribute("found"); %>
         <% if (found) {%>
             <%= "updated successfully" %>
-    <%} } %>  
+    <%} } %>
+    <table>
+        <tr>
+          <td>
+                <a href = "dealer.jsp">
+                 <input type = "button" value = "back">
+                </a>
+          </td> 
+          
+          <td>
+                <a href = "vehicleManagement.jsp">
+                 <input type = "button" value = "home">
+                 </a>
+          </td> 
+        </tr>                     
+     </table>  
 </body>
 </html>

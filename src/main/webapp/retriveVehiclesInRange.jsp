@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-    <h1>CHOOSE BELOW CHOICE</h1></br>
     <table>
+    <h1>CHOOSE BELOW CHOICE</h1></br>
     <tr>
        <td>
            <a href="retriveBetweenDate.jsp"> <input type="button"
@@ -24,6 +24,19 @@
 	       </a>
        </td>
     </tr>	
+        <tr>
+          <td>
+                <a href = "twoWheeler.jsp">
+                 <input type = "button" value = "back">
+                </a>
+          </td> 
+          
+          <td>
+                <a href = "vehicleManagement.jsp">
+                 <input type = "button" value = "home">
+                 </a>
+          </td> 
+        </tr>                     
     </table>
 
 </body>
