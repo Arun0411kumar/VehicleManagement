@@ -11,12 +11,13 @@
     <input type ="number" name = "id" placeholder = "Enter manufacturer id">
     <input type="submit" value="submit">
     </form>
-    <% if (null != session.getAttribute("found")) { %>
-        <% boolean found = (boolean) session.getAttribute("found"); %>
+    ${status}
+    <%-- <% if (null != session.getAttribute("found")) { %>
+        <% boolean found = (boolean) s ession.getAttribute("found"); %>
         <% if (found) {%>
             <%= "Deleted successfully" %>
-    <%} } %>
-      <table>
+    <%} } %> --%>      
+    <table>
          <tr>
           <td>
                 <a href = "manufacturer.jsp">

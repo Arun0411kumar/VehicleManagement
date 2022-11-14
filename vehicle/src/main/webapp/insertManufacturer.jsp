@@ -9,13 +9,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-    <form:form action = "insertManufacturer" modelAttribute = "manufacturer"  method = "post" >
+    <form:form  method = "post" action = "insertManufacturer" modelAttribute = "manufacturer" >
         <h1>FILL THE BELOW CHOICES</h1>
         <table>        
             <tr>
                 <td>Name</td>
                 <td> 
-                    <form:input path = "brandName" type ="text" name ="name" />
+                    <form:input type ="text" path = "name" />
                 </td>
             </tr>
             
@@ -34,12 +34,13 @@
             </tr>  
             <tr>
                 <td> 
-                    <input type ="submit" value = "submit">
+                    <input type ="submit" path = "submit" />
                 </td>
             </tr>           
         </table>
     </form:form>
-    <% Manufacturer manufacturer = (Manufacturer) session.getAttribute("manufacturer"); %>
+    ${manu}
+<%--     <% Manufacturer manufacturer = (Manufacturer) session.getAttribute("manufacturer"); %>
     <% if (null != manufacturer) { %>
     <table>
         <tr>
@@ -62,7 +63,7 @@
             <td><%= manufacturer.getInvestment() %></td>
         </tr> 
     </table>    
-    <% } %>
+    <% } %> --%>
        <table>
          <tr>
           <td>

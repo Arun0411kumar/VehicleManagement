@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-    <form method = "get" action = "getManufacturers">
     <table>
          <tr>
          <td><h1>MANUFACTURER CHOICE</h1></td>
@@ -15,10 +14,11 @@
          
          <tr>
              <td>
-             	<a href="insertManufacturer.jsp"> <input type="button"
+             	<a href="createManufacturer"> <input type="button"
 		        value="insert">
 	            </a>
              </td>
+
          </tr>
          
          <tr>
@@ -31,7 +31,7 @@
          
          <tr>
              <td>
-             	<a href="getManufacturerById.jsp"> <input type="button"
+             	<a href="getManufacturer.jsp"> <input type="button"
 		        value="getManufacturerById">
 	            </a>
              </td>
@@ -39,7 +39,7 @@
          
          <tr>
              <td>
-             	<a href="deleteManufacturerById.jsp"> <input type="button"
+             	<a href="deleteManufacturer.jsp"> <input type="button"
 		        value="delete">
 	            </a>
              </td>
@@ -47,7 +47,7 @@
          
          <tr>
              <td>
-             	<a href="updateManufacturerById.jsp"> <input type="button"
+             	<a href="updateManufacturer"> <input type="button"
 		        value="update">
 	            </a>
              </td>
@@ -61,6 +61,5 @@
           </td> 
          </tr>
     </table>
-	</form>
 </body>
 </html>

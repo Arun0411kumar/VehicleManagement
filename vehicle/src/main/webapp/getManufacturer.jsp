@@ -12,7 +12,8 @@
     <input type ="number" name = "id" placeholder = "Enter manufacturer id">
     <input type="submit" value="submit">
     </form>
-    <% Manufacturer manufacturer = (Manufacturer) session.getAttribute("manufacturer"); %>
+    ${manufacturer}
+<%--     <% Manufacturer manufacturer = (Manufacturer) session.getAttribute("manufacturer"); %>
     <% if (null != manufacturer) { %>
     <h1>YOUR MANUFACTURER DEATAILS</h1>
     <table>
@@ -39,7 +40,7 @@
      <% session.setAttribute("manufacturer", manufacturer); %>  
     <% } else {%>
         <%= "Enter correct Id" %>
-    <% } %>
+    <% } %> --%>
     <table>
          <tr>
           <td>

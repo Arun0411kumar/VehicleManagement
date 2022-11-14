@@ -24,7 +24,7 @@
             </a>
             </td>
         </tr>
-        
+          
         <tr>
             <td>
             <a href = "dealer.jsp">

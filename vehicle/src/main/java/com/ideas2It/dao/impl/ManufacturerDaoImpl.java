@@ -110,6 +110,7 @@ public class ManufacturerDaoImpl implements ManufacturerDao {
 		try {
 			session = factory.openSession();
 			transaction = session.beginTransaction();
+			session.clear();
 			session.update(manufacturer);
 			transaction.commit();
 			return session.contains(manufacturer);
