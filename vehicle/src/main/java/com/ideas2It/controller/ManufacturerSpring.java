@@ -27,21 +27,23 @@ public class ManufacturerSpring {
 		return "insertManufacturer";
 	}
 	
-	@RequestMapping(value = "/updateManufacturer")
-	public String updateManufacturer(Model model) {
-		model.addAttribute("manufacturer", new Manufacturer());
-		return "updateManufacturer";
-	}
-	
 	@RequestMapping(value = "/insertManufacturer", method = RequestMethod.POST)
     public String createManufacturer(@ModelAttribute("manufacturer") Manufacturer manufacturer, 
     		Model model) {
-    	try {
-			model.addAttribute("manu", new ManufacturerServiceImpl().createManufacturer1(manufacturer));
-		} catch (VehicleManagementException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		    int id = manufacturer.getId();
+			try {
+	    		if (0 != id) {
+	    			manufacturer.setCreatedAt(manufacturerService.getManufacturerById(id).getCreatedAt());
+	    			if (manufacturerService.updateManufacturer(manufacturer)) {
+	    				model.addAttribute("status", "updated successfully");
+	    			}		
+	    		} else {
+				    model.addAttribute("status", manufacturerService.createManufacturer(manufacturer));	
+	    		}
+			} catch (VehicleManagementException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
     	return "insertManufacturer";
     }
 	
@@ -66,7 +68,7 @@ public class ManufacturerSpring {
 			e.printStackTrace();
 		}
     	if (action.equals("/getManufacturerForUpdate")) {
-    		return "updateManufacturer";
+    		return "insertManufacturer";
     	} else
     	    return "getManufacturer";
     }
@@ -86,16 +88,4 @@ public class ManufacturerSpring {
 		}
     	return "deleteManufacturer";
     }
-	
-	@RequestMapping(value = "/updateManufacturerById", method = RequestMethod.POST)
-    public String updateManufacturerById(@ModelAttribute("manufacturer") Manufacturer manufacturer, 
-    		Model model) {
-		try {
-			model.addAttribute("manufacturer1", manufacturerService.updateManufacturer(manufacturer));
-		} catch (VehicleManagementException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return "updateManufacturer";
-    }	
 }

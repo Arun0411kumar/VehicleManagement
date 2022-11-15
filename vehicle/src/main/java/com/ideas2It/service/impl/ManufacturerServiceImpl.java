@@ -19,22 +19,11 @@ import com.ideas2It.util.customException.VehicleManagementException;
 public class ManufacturerServiceImpl implements ManufacturerService {
 	private ManufacturerDao manufacturerDao = new ManufacturerDaoImpl();
 
-	/**
-	 * {@inheritdoc}
-	 */
-	public Manufacturer createManufacturer(String name, String company, Double investment)
-			throws VehicleManagementException {
-		Manufacturer manufacturer = new Manufacturer();
-		manufacturer.setName(name);
-		manufacturer.setCompany(company);
-		manufacturer.setInvestment(investment);
-		return manufacturerDao.insertManufacturer(manufacturer);
-	}
 	
 	/**
 	 * {@inheritdoc}
 	 */
-	public Manufacturer createManufacturer1(Manufacturer manufacturer)
+	public Manufacturer createManufacturer(Manufacturer manufacturer)
 			throws VehicleManagementException {
 		return manufacturerDao.insertManufacturer(manufacturer);
 	}

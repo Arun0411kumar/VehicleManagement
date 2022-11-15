@@ -11,7 +11,8 @@
 <body>
     <form:form  method = "post" action = "insertManufacturer" modelAttribute = "manufacturer" >
         <h1>FILL THE BELOW CHOICES</h1>
-        <table>        
+        <table>   
+            <form:input type ="hidden" path = "id" />
             <tr>
                 <td>Name</td>
                 <td> 
@@ -39,9 +40,8 @@
             </tr>           
         </table>
     </form:form>
-    ${manu}
-<%--     <% Manufacturer manufacturer = (Manufacturer) session.getAttribute("manufacturer"); %>
-    <% if (null != manufacturer) { %>
+    <% if (null != request.getAttribute("status") && !("updated successfully".equals(request.getAttribute("status")))) { %>
+    <% Manufacturer manufacturer = (Manufacturer) request.getAttribute("status"); %>
     <table>
         <tr>
             <td>Id</td>
@@ -63,7 +63,9 @@
             <td><%= manufacturer.getInvestment() %></td>
         </tr> 
     </table>    
-    <% } %> --%>
+    <% } else {%>
+        ${status}
+    <% } %>
        <table>
          <tr>
           <td>

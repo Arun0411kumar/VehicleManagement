@@ -7,15 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-    <form method = "post" action = "deleteTwoWheelerById">
-    <input type ="text" name = "code" placeholder = "Enter vehicle code">
+    <form method = "post" action = "deleteTwoWheelerByCode">
+    <input type ="text" name = "vehicleCode" placeholder = "Enter vehicle code">
     <input type="submit" value="submit">
     </form>
-    <% if (null != session.getAttribute("found")) { %>
-        <% boolean found = (boolean) session.getAttribute("found"); %>
-        <% if (found) {%>
-            <%= "Deleted successfully" %>
-    <%} } %> 
+    ${status}
        <table>
          <tr>
           <td>

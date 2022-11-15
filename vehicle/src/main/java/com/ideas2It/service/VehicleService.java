@@ -23,18 +23,11 @@ public interface VehicleService {
 	/**
 	 * This method create two wheeler object and return it
 	 * 
-	 * @param brandname           - brand name from the controller
-	 * @param fueltype            - fuel type from the controller
-	 * @param mileage             - mileage from the controller
-	 * @param colour              - colour from the controller
-	 * @param dateOfManufacturing - date from the controller
-	 * @param noOfStroke          - noOfStroke from the controller
-	 * @param twoWheelerType      - two wheeler type from the controller
+	 * @param twoWheeler
 	 * @throws VehicleManagementException
 	 * @return its return two wheeler object
 	 */
-	public TwoWheeler createTwoWheeler(Brand brandName, FuelType fuelType, byte mileage, Colours colour,
-			Date dateOfManufacturing, byte noOfStroke, Type type, Manufacturer manufacturer, Dealer dealer)
+	public TwoWheeler createTwoWheeler(TwoWheeler twoWheeler)
 			throws VehicleManagementException;
 
 	/**

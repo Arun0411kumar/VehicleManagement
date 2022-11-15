@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-    <form method = "get" action = "getTwoWheelers">
     <table>
     <tr> 
         <td>
@@ -16,7 +15,7 @@
     </tr>
     <tr>
         <td>
-        	<a href="insertTwoWheeler.jsp"> <input type="button"
+        	<a href="createTwoWheeler"> <input type="button"
 		    value="insert">
 	        </a>
         </td>
@@ -92,6 +91,5 @@
           </td> 
      </tr>                       
     </table>			
-	</form>
 </body>
 </html>

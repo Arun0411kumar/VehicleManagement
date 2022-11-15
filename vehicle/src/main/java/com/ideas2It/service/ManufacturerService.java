@@ -16,14 +16,12 @@ public interface ManufacturerService {
 	/**
 	 * This method create manufacturer object and return it
 	 * 
-	 * @param name       - name from the controller
-	 * @param company    - city type from the controller
-	 * @param investment - investment from the controller
+	 * @param manufacturer
 	 * @throws VehicleManagementException
 	 * 
 	 * @return its return two wheeler object
 	 */
-	public Manufacturer createManufacturer(String name, String city, Double investment)
+	public Manufacturer createManufacturer(Manufacturer manufacturer)
 			throws VehicleManagementException;
 
 	/**
@@ -35,7 +33,7 @@ public interface ManufacturerService {
 	public List<Manufacturer> getManufacturers() throws VehicleManagementException;
 
 	/**
-	 * This method gets user given input wheather it's in, then it will return
+	 * This method gets user given input whether it's in, then it will return
 	 * object
 	 *
 	 * @param manufacturerId
@@ -45,7 +43,7 @@ public interface ManufacturerService {
 	public Manufacturer getManufacturerById(int manufacturerId) throws VehicleManagementException;
 
 	/**
-	 * This method gets user given input wheather its in then it will remove object
+	 * This method gets user given input whether its in then it will remove object
 	 *
 	 * @param manufacturerId
 	 * @throws VehicleManagementException

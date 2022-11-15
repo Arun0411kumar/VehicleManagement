@@ -4,6 +4,7 @@
 <%@page import="com.ideas2It.model.TwoWheeler"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <!DOCTYPE html>
 <%
 Manufacturer manufacturer = null;
@@ -16,98 +17,66 @@ Dealer dealer = null;
 </head>
 <body>
     <h1>FILL THE BELOW CHOICES</h1>
-	<form method="get" action="assignDealer">
-	</form>
-	<form method="get" action="assignManufacturer">
-	</form>
-	<form method = "post" action = "insertTwoWheeler">
-        <table>
+	<form:form method = "post" action = "insertTwoWheeler" modelAttribute = "twoWheeler">
+	    <table>
+	        <form:input type ="hidden" path = "id" />
+	        <form:input type ="hidden" path = "vehicleCode" />
             <tr>
-                <td>Brand Name</td>
+                <td><label for = "brandName">Brand Name</label></td>
                 <td> 
-                    <input type ="radio" name ="brandName" id = "honda" value = "HONDA">
-                    <label for="honda">Honda</label>
-                    <input type ="radio" name ="brandName" id = "ducati" value = "DUCATI">
-                    <label for="ducati">Ducati</label>
-                    <input type ="radio" name ="brandName" id = "kawasaki" value = "KAWASAKI">
-                    <label for="kawasaki">Kawasaki</label>
-                    <input type ="radio" name ="brandName" id = "pulser" value = "PULSER">
-                    <label for="pulser">Pulser</label>                  
+                    <form:radiobuttons path ="brandName" id = "brandName"/>                 
                 </td>
             </tr>
             
             <tr>
-                <td>Fuel Type</td>
+                <td><label for = "fuelType">Fuel Type</label></td>
                 <td> 
-                    <input type ="radio" name ="fuelType" id = "petrol" value = "PETROL">
-                    <label for="petrol">Petrol</label>                    
-                    <input type ="radio" name ="fuelType" id = "diesel" value = "DIESEL">
-                    <label for="diesel">Diesel</label>                     
-                    <input type ="radio" name ="fuelType" id = "battery" value = "BATTERY">
-                    <label for="battery">Battery</label> 
+                    <form:radiobuttons path ="fuelType" id = "fuelType"/> 
                 </td>
             </tr>
             
             <tr>
-                <td>mileage</td>
+                <td><label for = "mileage">Mileage</label></td>
                 <td> 
-                    <input type ="number" name ="mileage" pattern ="[11-79]{1}" 
-                     title = "number must within the 11 - 78">
+                    <form:input path ="mileage" id = "mileage"/>
                 </td>
             </tr>
             
             <tr>
-                <td>colour</td>
+                <td><label for = "colour">Colour</label></td>
                 <td> 
-                    <input type ="radio" name ="colour" id = "black" value = "BLACK">Black
-                    <label for="black">Black</label>                     
-                    <input type ="radio" name ="colour" id = "blue" value = "BLUE">Blue
-                    <label for="blue">Blue</label>
-                    <input type ="radio" name ="colour" id = "white" value = "WHITE">White
-                    <label for="white">White</label>
-                    <input type ="radio" name ="colour" id = "red" value = "RED">Red
-                    <label for="red">Red</label>
-                    <input type ="radio" name ="colour" id = "yellow" value = "YELLOW">Yellow
-                    <label for="yellow">Yellow</label>
-                </td>
+                    <form:radiobuttons path ="colour" id = "colour"/>
             </tr>  
             
             <tr>
-                <td>Date Of Manufacture</td>
+                <td><label for = "date">DateOfManufacture</label></td>
                 <td> 
-                    <input type ="date" name ="dateOfManufacture">
+                    <input name ="date" type ="date" id = "date">
                 </td>
             </tr> 
             
             <tr>
-                <td>No Of Stroke</td>
+                <td><label for = "noOfStroke">No Of Stroke</label></td>
                 <td> 
-                    <input type ="tel" name ="noOfStroke" pattern ="[2]|[4]" 
-                     title = "Enter number 2 or 4">
+                    <form:input path ="noOfStroke" id = "noOfStroke" pattern ="[2]|[4]" 
+                     title = "Enter number 2 or 4" />
                 </td>
             </tr>
             
             <tr>
-                <td>Type</td>
+                <td><label for = "type">Type</label></td>
                 <td> 
-                    <input type ="radio" name ="type" id = "gear" value = "GEAR">Gear
-                    <label for="gear">Gear</label> 
-                    <input type ="radio" name ="type" id = "non-Gear" value = "NONGEAR">Non-Gear
-                    <label for="non-Gear">Non-Gear</label> 
-                    <input type ="radio" name ="type" id = "scotter" value = "SCOTTER">Scotter
-                    <label for="scotter">Scotter</label> 
+                    <form:radiobuttons path ="type" id = "type"/>
                 </td>
             </tr>  
             
             <tr>
-                 <td>Dealer</td>   
+                 <td><label for = "dealer">Dealer</label></td>   
                  <td> 
-                     <a href="assignDealer"> <input type="button" value="assign-Dealer">
-		             </a>
-	                 </br>
-	                 <%List<Dealer> dealers = (List<Dealer>) session.getAttribute("dealers");  %>
+	                 <%List<Dealer> dealers = (List<Dealer>) request.getAttribute("dealers");  %>
 	                 <% if (null != dealers) { %>
-	                 <select name = "dealerId" required>
+	                 <select name = "dealerId" id = "dealer" required>
+	                       <option value = " ">null</option>
 	                  	   <% for (int index = 0; index < dealers.size(); index++) { %>
 	                  	       <% dealer = dealers.get(index); %>
                      	       <option value = "<%= dealer.getId() %>"><%= dealer %></option>
@@ -118,14 +87,11 @@ Dealer dealer = null;
             </tr>
             
              <tr>
-             <td>Manufacturer</td>   
+             <td><label for = "manufacturer">Manufacturer</label></td>   
                  <td> 
-                     <a href="assignManufacturer"><input type="button"
-			            value="assign-Manufacturer"> </a>
-	                 </br>
-	                 <%List<Manufacturer> manufacturers = (List<Manufacturer>) session.getAttribute("manufacturers");  %>
+	                 <%List<Manufacturer> manufacturers = (List<Manufacturer>) request.getAttribute("manufacturers");  %>
 	                 <% if (null != manufacturers) { %>
-	                 <select name = "manufacturerId" required>
+	                 <select name = "manufacturerId" id = "manufacturer" required>
 	                 	   <% for (int index = 0; index < manufacturers.size(); index++) { %>
 	                     	   <% manufacturer = manufacturers.get(index); %>
     	                  	   <option value = "<%= manufacturer.getId() %>"><%= manufacturer %></option>
@@ -139,12 +105,10 @@ Dealer dealer = null;
                 <td> 
                     <input type ="submit" value = "submit">
                 </td>
-            </tr> 
-     </form>
-</body>
-    <% TwoWheeler twoWheeler = (TwoWheeler) session.getAttribute("twoWheeler"); %>
-    <% if (null != twoWheeler) {%>
-    <table>
+            </tr> 	
+	</form:form>
+    <% if (null != request.getAttribute("status") && !("updated successfully".equals(request.getAttribute("status")))) {%>
+        <% TwoWheeler twoWheeler = (TwoWheeler) request.getAttribute("status"); %>
         <tr>
             <td>Id</td>
             <td><%= twoWheeler.getId() %></td>
@@ -209,8 +173,9 @@ Dealer dealer = null;
                 </td>
            <% } %>    
         </tr> 
+    <% } else {%>
+        ${status}
     <% } %>
-      <table>
         <tr>
           <td>
                 <a href = "twoWheeler.jsp">
@@ -223,6 +188,7 @@ Dealer dealer = null;
                  <input type = "button" value = "home">
                  </a>
           </td> 
-        </tr>                     
+        </tr>                    
       </table>
+</body>
 </html>

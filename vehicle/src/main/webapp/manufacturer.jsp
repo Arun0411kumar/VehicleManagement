@@ -47,7 +47,7 @@
          
          <tr>
              <td>
-             	<a href="updateManufacturer"> <input type="button"
+             	<a href="updateManufacturer.jsp"> <input type="button"
 		        value="update">
 	            </a>
              </td>

@@ -7,6 +7,8 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.MappedSuperclass;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import com.ideas2It.util.enumeration.Brand;
 import com.ideas2It.util.enumeration.Colours;
 import com.ideas2It.util.enumeration.FuelType;
@@ -38,7 +40,7 @@ public class Vehicle extends BaseModel {
     @Enumerated(EnumType.STRING)
     private Colours colour;
 	
-    @Column(name = "date_of_manufacture")
+    @Column(name = "date_of_manufacture", columnDefinition = "date")
     private Date dateOfManufacture;
 
 	public String getVehicleCode() {

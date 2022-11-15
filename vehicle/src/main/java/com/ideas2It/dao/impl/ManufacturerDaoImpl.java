@@ -33,9 +33,9 @@ public class ManufacturerDaoImpl implements ManufacturerDao {
 		try {
 			session = factory.openSession();
 			transaction = session.beginTransaction();
-			int id = (int) session.save(manufacturer);
+			session.save(manufacturer);
 			transaction.commit();
-			return session.get(Manufacturer.class, id);
+			return session.get(Manufacturer.class, manufacturer.getId());
 		} catch (HibernateException ex) {
 			transaction.rollback();
 			throw new VehicleManagementException(new StringBuffer().append(ex).append(Constants.ALERT_MESSAGE)

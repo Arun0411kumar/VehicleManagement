@@ -9,11 +9,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-    <form method = "post" action = "getTwoWheelerById">
-    <input type ="text" name = "code" placeholder = "Enter vehicle code">
+    <form method = "post" action = "getTwoWheelerByCode">
+    <input type ="text" name = "vehicleCode" placeholder = "Enter vehicle code">
     <input type="submit" value="submit">
     </form>
-    <% TwoWheeler twoWheeler = (TwoWheeler) session.getAttribute("twoWheeler"); %>
+    <% TwoWheeler twoWheeler = (TwoWheeler) request.getAttribute("twoWheeler"); %>
     <% if (null != twoWheeler) {%>
     <h1>YOUR TWO WHEELER DEATAILS</h1>
     <table>

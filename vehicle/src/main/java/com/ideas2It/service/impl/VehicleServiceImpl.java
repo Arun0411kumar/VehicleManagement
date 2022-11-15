@@ -38,27 +38,13 @@ public class VehicleServiceImpl implements VehicleService {
 		String value = "Vehicle-" + (++code);
 		return value;
 	}
-
+	
 	/**
 	 * {@inheritdoc}
 	 */
-	public TwoWheeler createTwoWheeler(Brand brandName, FuelType fuelType, byte mileage, Colours colour,
-			Date dateOfManufacturing, byte noOfStroke, Type type, Manufacturer manufacturer, Dealer dealer)
+	public TwoWheeler createTwoWheeler(TwoWheeler twoWheeler)
 			throws VehicleManagementException {
-
-		TwoWheeler twoWheeler = new TwoWheeler();
 		twoWheeler.setVehicleCode(generateVehicleCode());
-		twoWheeler.setBrandName(brandName);
-		twoWheeler.setFuelType(fuelType);
-		twoWheeler.setMileage(mileage);
-		twoWheeler.setColour(colour);
-		twoWheeler.setDateOfManufacture(dateOfManufacturing);
-		twoWheeler.setNoOfStroke(noOfStroke);
-		twoWheeler.setType(type);
-		twoWheeler.setManufacturer(manufacturer);
-		if (null != dealer) {
-			twoWheeler.setDealer(dealer);
-		}
 		return vehicleDao.insertTwoWheeler(twoWheeler);
 	}
 
@@ -139,61 +125,5 @@ public class VehicleServiceImpl implements VehicleService {
 			VehicleManagementLogger.displayVehicleInfo("Your list empty");
 		}
 		return twoWheelers;
-	}
-
-	/* Below five method based on method over loading */
-
-	/**
-	 * Gets vehicle Code then change the specified value
-	 *
-	 * @param userUpdateChoice
-	 * @param userVehicleCode
-	 * @param userChoice       - based on given input String
-	 * @return if value updated then it return true, else it return false
-	 */
-	public TwoWheeler updateTwoWheelerByCode(String userChoice, TwoWheeler twoWheeler, String updationValue)
-			throws VehicleManagementException {
-		switch (userChoice) {
-		case Constants.CHOICE_ONE:
-			twoWheeler.setBrandName(Brand.valueOf(updationValue));
-			break;
-
-		case Constants.CHOICE_TWO:
-			twoWheeler.setFuelType(FuelType.valueOf(updationValue));
-			break;
-
-		case Constants.CHOICE_THREE:
-			twoWheeler.setMileage(Byte.parseByte(updationValue));
-			break;
-
-		case Constants.CHOICE_FOUR:
-			twoWheeler.setColour(Colours.valueOf(updationValue));
-			break;
-
-		case Constants.CHOICE_SIX:
-			twoWheeler.setNoOfStroke(Byte.parseByte(updationValue));
-			break;
-
-		case Constants.CHOICE_SEVEN:
-			twoWheeler.setType(Type.valueOf(updationValue));
-			break;
-
-		default:
-			throw new VehicleManagementException(Constants.ALERT_MESSAGE);
-		}
-		return twoWheeler;
-	}
-
-	/**
-	 * {@inheritdoc}
-	 */
-	public TwoWheeler updateTwoWheelerByCode(String userChoice, TwoWheeler twoWheeler, Date updationValue)
-			throws VehicleManagementException {
-		if (Constants.CHOICE_FIVE.equals(userChoice)) {
-			twoWheeler.setDateOfManufacture(updationValue);
-		} else {
-			throw new VehicleManagementException(Constants.ALERT_MESSAGE);
-		}
-		return twoWheeler;
 	}
 }

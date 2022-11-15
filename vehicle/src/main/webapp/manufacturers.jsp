@@ -10,8 +10,9 @@
 </head>
 <body> 
      <h1>YOUR MANUFACTURER LIST</h1></br>
-     ${manufacturers}
-    <%-- <% List<Manufacturer> manufacturers = (List<Manufacturer>) session.getAttribute("manufacturers"); %>
+<%--      ${manufacturers}
+     <%=  %> --%>
+    <% List<Manufacturer> manufacturers = (List<Manufacturer>) request.getAttribute("manufacturers"); %>
     <% if (null != manufacturers) { %>
     <% for (Manufacturer manufacturer: manufacturers) {%>
     <table>
@@ -51,6 +52,6 @@
                  </a>
           </td> 
         </tr>     
-      </table> --%> 
+      </table> 
 </body>
 </html>
