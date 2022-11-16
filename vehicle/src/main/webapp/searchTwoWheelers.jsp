@@ -14,7 +14,7 @@
     <input type ="text" name = "letter" placeholder = "Enter search value">
     <input type="submit" value="submit">
     </form>
-    <% List<TwoWheeler> twoWheelers = (List<TwoWheeler>) session.getAttribute("twoWheelers"); %>
+    <% List<TwoWheeler> twoWheelers = (List<TwoWheeler>) request.getAttribute("twoWheelers"); %>
     <% if (null != twoWheelers) {%>
     <h1>YOUR TWO WHEELER LIST</h1>
     <% for (TwoWheeler twoWheeler: twoWheelers)  {%>
@@ -84,7 +84,7 @@
            <% } %>    
         </tr>        
         </table>
-    <% } } %> 
+        <% } } %> 
       <table>
          <tr>
           <td>

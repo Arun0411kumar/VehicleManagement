@@ -70,12 +70,12 @@ public interface VehicleService {
 	/**
 	 * this method get the vehicle details with the given range
 	 *
-	 * @param userChoiceOne
-	 * @param userChoiceTwo
+	 * @param start
+	 * @param end
 	 * @throws VehicleManagementException
 	 * @return it return the given range
 	 */
-	public List<TwoWheeler> retriveVehiclesInRange(int choice, String start, String end) throws VehicleManagementException;
+	public List<TwoWheeler> retriveVehiclesInRange(String start, String end) throws VehicleManagementException;
 
 	/**
 	 * It's gets value and return that specific searched list

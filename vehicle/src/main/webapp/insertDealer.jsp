@@ -1,6 +1,7 @@
 <%@page import="com.ideas2It.model.Dealer"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,27 +9,28 @@
 <title>Insert title here</title>
 </head>
 <body>
-    <form method = "post" action = "insertDealer">
+    <form:form method = "post" action = "insertDealer" modelAttribute = "dealer">
         <h1>FILL THE BELOW CHOICES</h1>
         <table>
+            <form:input type ="hidden" path = "id" />
             <tr>
                 <td>City</td>
                 <td> 
-                    <input type ="text" name ="city" >
+                    <form:input type ="text" path ="city" />
                 </td>
             </tr>
             
             <tr>
                 <td>Company</td>
                 <td> 
-                    <input type ="text" name ="company">
+                    <form:input type ="text" path ="company" />
                 </td>
             </tr>
             
             <tr>
                 <td>StockAvailable</td>
                 <td> 
-                    <input type ="number" name ="stockAvailable" >
+                    <form:input path ="stockAvailable" />
                 </td>
             </tr>  
             
@@ -38,9 +40,9 @@
                 </td>
             </tr>          
         </table>
-    </form>
-    <% Dealer dealer = (Dealer) session.getAttribute("dealer"); %>
-    <% if (null != dealer) { %>
+    </form:form>
+    <% if (null != request.getAttribute("status") && !("updated successfully".equals(request.getAttribute("status")))) { %>
+    <% Dealer dealer = (Dealer) request.getAttribute("status"); %>
     <table>
         <tr>
             <td>Id</td>
@@ -62,6 +64,8 @@
             <td><%= dealer.getCity() %></td>
         </tr> 
     </table>  
+    <% } else { %>
+        ${status}
     <% } %>
     <table>
         <tr>

@@ -9,8 +9,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-     <h1>YOUR DEALERS LIST</h1></br>
-    <% List<Dealer> dealers = (List<Dealer>) session.getAttribute("dealers"); %>
+    <h1>YOUR DEALERS LIST</h1></br>
+    <% List<Dealer> dealers = (List<Dealer>) request.getAttribute("dealers"); %>
     <% if (null != dealers) { %>
     <% for (Dealer dealer: dealers) {%>
     <table>

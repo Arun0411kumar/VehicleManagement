@@ -96,8 +96,8 @@ public class VehicleServiceImpl implements VehicleService {
 	/**
 	 * {@inheritdoc}
 	 */
-	public List<TwoWheeler> retriveVehiclesInRange(int choice, String start, String end) throws VehicleManagementException {
-		List<TwoWheeler> twoWheelers = vehicleDao.retriveVehiclesInRange(choice, start, end);
+	public List<TwoWheeler> retriveVehiclesInRange(String start, String end) throws VehicleManagementException {
+		List<TwoWheeler> twoWheelers = vehicleDao.retriveVehiclesInRange(start, end);
 		if (null == twoWheelers) {
 			VehicleManagementLogger.displayVehicleInfo("Your list empty");
 		}

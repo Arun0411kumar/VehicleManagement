@@ -11,11 +11,7 @@
     <input type ="number" name = "id" placeholder = "Enter dealer id">
     <input type="submit" value ="submit">
     </form>
-    <% if (null != session.getAttribute("found")) { %>
-        <% boolean found = (boolean) session.getAttribute("found"); %>
-        <% if (found) {%>
-            <%= "Deleted successfully" %>
-    <%} } %> 
+    ${status}
     <table>
         <tr>
           <td>

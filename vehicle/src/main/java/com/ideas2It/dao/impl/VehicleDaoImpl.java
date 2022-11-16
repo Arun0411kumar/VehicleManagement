@@ -141,7 +141,7 @@ public class VehicleDaoImpl implements VehicleDao {
 	/**
 	 * {@inheritdoc}
 	 */
-	public List<TwoWheeler> retriveVehiclesInRange(int choice, String start, String end)
+	public List<TwoWheeler> retriveVehiclesInRange(String start, String end)
 			throws VehicleManagementException {
 		try {
 			session = factory.openSession();

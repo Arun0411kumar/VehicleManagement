@@ -1,6 +1,7 @@
 package com.ideas2It.controller;
 
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -106,6 +107,32 @@ public class TwoWheelerSpring {
 		}
     	return "deleteTwoWheeler";
     }
+	
+	@RequestMapping(value = "/searchTwoWheelers", method = RequestMethod.POST)
+	private String searchTwoWheelers(@RequestParam String letter, Model model) {
+	    try {
+			model.addAttribute("twoWheelers", vehicleService.searchTwoWheeler(letter));
+		} catch (VehicleManagementException e) {
+			e.printStackTrace();
+		}
+	    return "searchTwoWheelers";
+    }	
+	
+	@RequestMapping(value = "/range", method = RequestMethod.POST)
+	private String retriveTwoWheelersInRange(@RequestParam String start, @RequestParam String end, Model model) {
+			try {
+				model.addAttribute("twoWheelers", vehicleService.retriveVehiclesInRange(start, end));
+			} catch (VehicleManagementException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}		
+			try {
+				new SimpleDateFormat("yyyy-MM-dd").parse(start);
+				return "retriveBetweenDate";
+			} catch (ParseException  e) {
+				return "retriveBetweenMileage";
+			}
+	}
 	
     public void getManufacturersAndDealers(Model model) throws VehicleManagementException {
 		model.addAttribute("manufacturers", manufacturerService.getManufacturers());

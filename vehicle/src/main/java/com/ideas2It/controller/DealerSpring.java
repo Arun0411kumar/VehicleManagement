@@ -78,7 +78,6 @@ public class DealerSpring {
     		} else {
     			model.addAttribute("status", "please provide valid id");
     		}
-    		
 		} catch (VehicleManagementException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

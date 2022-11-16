@@ -12,7 +12,7 @@
     <input type ="number" name = "id" placeholder = "Enter dealer id">
     <input type="submit" value="submit">
     </form>
-    <% Dealer dealer = (Dealer) session.getAttribute("dealer"); %>
+    <% Dealer dealer = (Dealer) request.getAttribute("dealer"); %>
     <% if (null != dealer) { %>
     <h1>YOUR DEALER DEATAILS</h1>
     <table>

@@ -25,7 +25,7 @@
         </tr>
     </table>
     </form>
-     <% List<TwoWheeler> twoWheelers = (List<TwoWheeler>) session.getAttribute("twoWheelers"); %>
+     <% List<TwoWheeler> twoWheelers = (List<TwoWheeler>) request.getAttribute("twoWheelers"); %>
     <% if (null != twoWheelers) {%>
     <h1>YOUR TWO WHEELER LIST</h1></br>
     <% for (TwoWheeler twoWheeler: twoWheelers)  {%>

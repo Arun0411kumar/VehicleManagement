@@ -84,7 +84,7 @@ public interface VehicleDao {
 	 * @param userChoiceTwo
 	 * @return it return the given range
 	 */
-	public List<TwoWheeler> retriveVehiclesInRange(int choice, String start, String end) throws VehicleManagementException;
+	public List<TwoWheeler> retriveVehiclesInRange(String start, String end) throws VehicleManagementException;
 
 	/**
 	 * this method retrive the vehicle details with the given Codes
