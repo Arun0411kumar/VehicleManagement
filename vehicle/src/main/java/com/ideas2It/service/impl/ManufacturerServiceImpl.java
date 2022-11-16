@@ -18,7 +18,6 @@ import com.ideas2It.util.customException.VehicleManagementException;
  */
 public class ManufacturerServiceImpl implements ManufacturerService {
 	private ManufacturerDao manufacturerDao = new ManufacturerDaoImpl();
-
 	
 	/**
 	 * {@inheritdoc}

@@ -18,13 +18,12 @@ import com.ideas2It.util.customException.VehicleManagementException;
  */
 public class DealerServiceImpl implements DealerService {
 	private DealerDao dealerDao = new DealerDaoImpl();
-
-	public Dealer createDealer(String company, int stockAvailable, String city) throws VehicleManagementException {
-		Dealer dealer = new Dealer();
-		dealer.setCompany(company);
-		dealer.setStockAvailable(stockAvailable);
-		dealer.setCity(city);
-		return dealerDao.insertDealers(dealer);
+	
+	/**
+	 * {@inheritdoc}
+	 */	
+	public Dealer createDealer(Dealer dealer) throws VehicleManagementException {
+		return dealerDao.insertDealers(dealer);	
 	}
 
 	/**

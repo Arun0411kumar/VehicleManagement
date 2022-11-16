@@ -39,7 +39,7 @@ public interface VehicleService {
 	public List<TwoWheeler> getTwoWheelers() throws VehicleManagementException;
 
 	/**
-	 * This method gets user given input wheather it's in, then it will return
+	 * This method gets user given input whether it's in, then it will return
 	 * object
 	 *
 	 * @param userVehicleCode
@@ -49,7 +49,7 @@ public interface VehicleService {
 	public TwoWheeler getTwoWheelerByCode(String vehicleCode) throws VehicleManagementException;
 
 	/**
-	 * This method gets user given input wheather its in then it will remove object
+	 * This method gets user given input whether its in then it will remove object
 	 *
 	 * @param userVehicleCode
 	 * @throws VehicleManagementException

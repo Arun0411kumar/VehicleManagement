@@ -16,13 +16,11 @@ public interface DealerService {
 	/**
 	 * This method create dealer object and return it
 	 * 
-	 * @param company        - company from the controller
-	 * @param stockAvailable - stockAvailable from the controller
-	 * @param city           - city from the controller
+	 * @param dealer
 	 * @throws VehicleManagementException
 	 * @return its return dealer object
 	 */
-	public Dealer createDealer(String company, int stockAvailable, String city) throws VehicleManagementException;
+	public Dealer createDealer(Dealer dealer) throws VehicleManagementException;
 
 	/**
 	 * This method was return dealer details

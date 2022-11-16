@@ -101,7 +101,7 @@ public class TwoWheelerSpring {
     		} else {
     			model.addAttribute("status", "please provide valid id");
     		}
-		} catch (VehicleManagementException e) {
+		} catch (VehicleManagementException e) { 
 			e.printStackTrace();
 		}
     	return "deleteTwoWheeler";

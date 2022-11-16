@@ -109,7 +109,8 @@ Dealer dealer = null;
 	</form:form>
     <% if (null != request.getAttribute("status") && !("updated successfully".equals(request.getAttribute("status")))) {%>
         <% TwoWheeler twoWheeler = (TwoWheeler) request.getAttribute("status"); %>
-        <tr>
+        <table>
+                <tr>
             <td>Id</td>
             <td><%= twoWheeler.getId() %></td>
         </tr>
@@ -188,7 +189,8 @@ Dealer dealer = null;
                  <input type = "button" value = "home">
                  </a>
           </td> 
-        </tr>                    
+        </tr> 
+        </table>                   
       </table>
 </body>
 </html>
