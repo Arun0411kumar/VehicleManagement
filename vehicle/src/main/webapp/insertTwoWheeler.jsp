@@ -10,6 +10,18 @@
 Manufacturer manufacturer = null;
 Dealer dealer = null;
 %>
+<% Dealer dealerForUpdate = (Dealer) request.getAttribute("dealer"); %>
+<%List<Dealer> dealers = (List<Dealer>) request.getAttribute("dealers");  %>
+<% Manufacturer manufacturerForUpdate = (Manufacturer) request.getAttribute("manufacturer"); %>
+<%List<Manufacturer> manufacturers = (List<Manufacturer>) request.getAttribute("manufacturers");  %>
+
+<% if (null != manufacturerForUpdate) { %>
+<%= manufacturers.remove(manufacturers.get(manufacturerForUpdate.getId() - 1)) %>
+<% } %>
+
+<% if (null != dealerForUpdate) { %>
+<%= dealers.remove(dealers.get(dealerForUpdate.getId() - 1)) %> 
+<% } %>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -24,7 +36,7 @@ Dealer dealer = null;
             <tr>
                 <td><label for = "brandName">Brand Name</label></td>
                 <td> 
-                    <form:radiobuttons path ="brandName" id = "brandName"/>                 
+                    <form:radiobuttons path ="brandName" id = "brandName" />                 
                 </td>
             </tr>
             
@@ -38,7 +50,8 @@ Dealer dealer = null;
             <tr>
                 <td><label for = "mileage">Mileage</label></td>
                 <td> 
-                    <form:input path ="mileage" id = "mileage"/>
+                    <form:input path ="mileage" id = "mileage" placeholder ="Enter mileage" pattern ="[11-78]" 
+                     title = "Enter number between 11 to 78" />
                 </td>
             </tr>
             
@@ -73,28 +86,32 @@ Dealer dealer = null;
             <tr>
                  <td><label for = "dealer">Dealer</label></td>   
                  <td> 
-	                 <%List<Dealer> dealers = (List<Dealer>) request.getAttribute("dealers");  %>
 	                 <% if (null != dealers) { %>
 	                 <select name = "dealerId" id = "dealer" required>
-	                       <option value = " ">null</option>
+	                       <% if (null != dealerForUpdate) { %>
+    	                  	   <option value = "<%= dealerForUpdate.getId() %>"><%= dealerForUpdate %></option>
+    	                   <% } %>  
 	                  	   <% for (int index = 0; index < dealers.size(); index++) { %>
 	                  	       <% dealer = dealers.get(index); %>
-                     	       <option value = "<%= dealer.getId() %>"><%= dealer %></option>
+                     	           <option value = "<%= dealer.getId() %>"><%= dealer %></option>
 	                  	   <% } %>
+	                  	   <option value =" ">Select if you don't want dealer</option>
 	                 </select>
 	                 <% } %>  
                  </td>         
             </tr>
             
              <tr>
-             <td><label for = "manufacturer">Manufacturer</label></td>   
-                 <td> 
-	                 <%List<Manufacturer> manufacturers = (List<Manufacturer>) request.getAttribute("manufacturers");  %>
+             <td><label for = "manufacturer">Manufacturer</label></td>    
+                 <td>            	 	
 	                 <% if (null != manufacturers) { %>
 	                 <select name = "manufacturerId" id = "manufacturer" required>
+	                       <% if (null != manufacturerForUpdate) { %>
+    	                  	   <option value = "<%= manufacturerForUpdate.getId() %>"><%= manufacturerForUpdate %></option>
+    	                   <% } %>	                       
 	                 	   <% for (int index = 0; index < manufacturers.size(); index++) { %>
 	                     	   <% manufacturer = manufacturers.get(index); %>
-    	                  	   <option value = "<%= manufacturer.getId() %>"><%= manufacturer %></option>
+    	                  	   <option value = "<%= manufacturer.getId() %>"><%= manufacturer %></option>	
                       	   <% } %>
 	                 </select>
 	                 <% } %>

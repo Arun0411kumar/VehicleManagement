@@ -2,8 +2,12 @@ package com.ideas2It.controller;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +15,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.context.request.WebRequest;
 
 import com.ideas2It.model.Dealer;
 import com.ideas2It.model.Manufacturer;
@@ -73,7 +78,7 @@ public class TwoWheelerSpring {
     	try {
 			model.addAttribute("twoWheeler", vehicleService.getTwoWheelerByCode(vehicleCode));
 	    	if (action.equals("/getTwoWheelerForUpdate")) {
-	    		getManufacturersAndDealers(model);
+	    		getManufacturersAndDealers(model, vehicleCode);
 	    		response = "insertTwoWheeler";
 	    	} else {
 	    		response = "getTwoWheeler";	
@@ -83,7 +88,7 @@ public class TwoWheelerSpring {
 		}
     	return response;
     }
-	
+
 	@RequestMapping(value = "/getTwoWheelers", method = RequestMethod.GET)
     public String getManufacturers(Model model) {
     	try {
@@ -123,15 +128,32 @@ public class TwoWheelerSpring {
 			try {
 				model.addAttribute("twoWheelers", vehicleService.retriveVehiclesInRange(start, end));
 			} catch (VehicleManagementException e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}		
 			try {
 				new SimpleDateFormat("yyyy-MM-dd").parse(start);
 				return "retriveBetweenDate";
-			} catch (ParseException  e) {
+			} catch (ParseException e) {
 				return "retriveBetweenMileage";
 			}
+	}
+	
+	@RequestMapping(value = "/In", method = RequestMethod.GET)
+	public String getTwoWheelerInCodes(WebRequest webRequest, Model model) {
+		String[] codes = webRequest.getParameterValues("codes");
+		try {
+			model.addAttribute("twoWheelers", vehicleService.getTwoWheelerByCodes(codes));
+		} catch (VehicleManagementException e) {
+			e.printStackTrace();
+		}
+		return "retriveTwoWheelerInCodes";		
+	}
+	
+	private void getManufacturersAndDealers(Model model, String vehicleCode) throws VehicleManagementException {
+		getManufacturersAndDealers(model); 	
+		TwoWheeler twoWheeler = vehicleService.getTwoWheelerByCode(vehicleCode);
+		model.addAttribute("manufacturer", twoWheeler.getManufacturer());
+		model.addAttribute("dealer", twoWheeler.getDealer());
 	}
 	
     public void getManufacturersAndDealers(Model model) throws VehicleManagementException {

@@ -22,7 +22,7 @@
             <a href = "manufacturer.jsp">
              <input type = "button" value = "manufacturer">
             </a>
-            </td>
+            </td> 
         </tr>
           
         <tr>

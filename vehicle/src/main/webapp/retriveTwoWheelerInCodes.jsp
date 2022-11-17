@@ -8,6 +8,7 @@
     <% if (null != request.getParameter("choice")) { %>
         <% choice = Integer.parseInt(request.getParameter("choice")); %>
     <% } %>
+    <% String[] codes = new String[choice]; %>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -20,7 +21,7 @@
       <table>
       <tr>
           <td>VehicleCode<%= index + 1 %></td>
-          <td><input type = "text" name = "code-<%= index + 1 %>" value ="code<%= index + 1 %>"></td>
+          <td><input type = "text" name = "codes" value ="<%= codes[index] %>"></td>
       </tr>   
       <% } %>
       
@@ -30,7 +31,7 @@
       </table> 
      </form>
      
-    <% List<TwoWheeler> twoWheelers = (List<TwoWheeler>) session.getAttribute("twoWheelers"); %>
+    <% List<TwoWheeler> twoWheelers = (List<TwoWheeler>) request.getAttribute("twoWheelers"); %>
     <% if (null != twoWheelers) {%>
     <h1>YOUR TWO WHEELER LIST</h1></br>
     <% for (TwoWheeler twoWheeler: twoWheelers)  {%>

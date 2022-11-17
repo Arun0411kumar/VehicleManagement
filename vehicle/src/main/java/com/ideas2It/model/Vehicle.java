@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.MappedSuperclass;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -25,6 +26,7 @@ public class Vehicle extends BaseModel {
 	@Column(name = "vehicle_code", columnDefinition = "varchar(255)")
     private String vehicleCode;
 	
+	@NotNull
 	@Column(name = "brand_name")
     @Enumerated(EnumType.STRING)
     private Brand brandName;
